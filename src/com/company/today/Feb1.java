@@ -77,7 +77,7 @@ public class Feb1 implements Serializable{
     {
 
         try {
-            FileOutputStream fileOut = new FileOutputStream("/tmp/file.ser");
+            FileOutputStream fileOut = new FileOutputStream("file.ser");
            ObjectOutputStream out = new ObjectOutputStream(fileOut);
             out.writeObject(today);
             out.close();
@@ -90,12 +90,12 @@ public class Feb1 implements Serializable{
 
     }
 
-//TODO reading causes lots of errors maybe try serializable on new class
+
     public static Feb1 read()
     {
         Feb1 tmp = null;
         try {
-            FileInputStream fileIn = new FileInputStream("/tmp/file.ser");
+            FileInputStream fileIn = new FileInputStream("file.ser");
             ObjectInputStream in = new ObjectInputStream(fileIn);
 
             //casting read object to Feb1

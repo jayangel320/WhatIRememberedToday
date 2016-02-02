@@ -1,6 +1,7 @@
 package com.company;
 
 import com.company.today.Feb1;
+import com.company.today.Feb2;
 
 import java.io.BufferedReader;
 import java.io.Console;
@@ -10,7 +11,6 @@ import java.util.Scanner;
 
 //TODO: make interface
 //TODO: make enum
-//TODO: make new class serializable
 //TODO: LinkedList vs ArrayList
 public class Main {
 
@@ -110,10 +110,15 @@ public class Main {
     System.out.printf("%n%d characters and the lowercase copy is: %s%n", charCount, fullNameCopy);
 */
         //Feb1.save(today);
+       int error = 57;
+        Feb2 today = new Feb2("apples", 10, 20);
+        Feb2.save(today);
+        Feb2 today2 = Feb2.read();
 
-        Feb1 today = Feb1.read();
-        System.out.printf("Today is %s",today.getColor());
-
+        if(today != null) {
+            System.out.printf("Today is %s, %d, %d", today2.getFruit(), today2.getNumberOfFruit(),
+                    (today2.getNumberOfVegetables() == -1) ? today2.getNumberOfVegetables() : error );
+        }
 
 
 }
