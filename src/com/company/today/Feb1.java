@@ -38,7 +38,7 @@ public class Feb1 implements Serializable{
         protected String mLastName = "Angel";
 
 
-    public static String mColor;
+        public static String mColor;
 
 
         //Constructor assigning member variables
@@ -47,6 +47,8 @@ public class Feb1 implements Serializable{
             mFirstName = firstName;
             mLastName = lastName;
         }
+
+
 
     public String getFirstName() {
         return mFirstName;
@@ -60,6 +62,9 @@ public class Feb1 implements Serializable{
         return mColor;
     }
 
+
+
+
     //Uses string method equals() which checks value equality instead of reference equality like "=="
      public void setColor(String color) throws IllegalArgumentException {
          if(color.equals("red"))
@@ -71,48 +76,6 @@ public class Feb1 implements Serializable{
 
 
 
-    //This type of save actually saves the object to a .ser file
-    //TODO: make a save that just saves the member variables as text
-    public static void save(Feb1 today)
-    {
-
-        try {
-            FileOutputStream fileOut = new FileOutputStream("file.ser");
-           ObjectOutputStream out = new ObjectOutputStream(fileOut);
-            out.writeObject(today);
-            out.close();
-            fileOut.close();
-            System.out.println("Object Saved!");
-        }catch(IOException ioe)
-        {
-            System.out.println(ioe.getMessage());
-        }
-
-    }
-
-
-    public static Feb1 read()
-    {
-        Feb1 tmp = null;
-        try {
-            FileInputStream fileIn = new FileInputStream("file.ser");
-            ObjectInputStream in = new ObjectInputStream(fileIn);
-
-            //casting read object to Feb1
-            tmp = (Feb1) in.readObject();
-            in.close();
-            fileIn.close();
-
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-    return tmp;
-
-    }
 
 
 }

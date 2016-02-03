@@ -5,7 +5,9 @@ import java.io.*;
 /**
  * Created by jaybob320 on 2/2/16.
  */
-public class Feb2 implements Serializable {
+
+//using the interface I created called fruit
+public class Feb2 implements Serializable, Fruit {
     //simple member variables
     private String mFruit;
     private int mNumberOfFruit;
@@ -17,6 +19,15 @@ public class Feb2 implements Serializable {
         mNumberOfFruit = numberOfFruit;
         mNumberOfVegetables = numberOfVegetables;
     }
+
+
+    //Declaring method from fruit interface
+    public int getAmountOfFruit()
+    {
+        return Fruit.numberOfFruit;
+    }
+
+
 
     public String getFruit() {
         return mFruit;
@@ -30,7 +41,17 @@ public class Feb2 implements Serializable {
         return mNumberOfVegetables;
     }
 
+    public void setFruit(String fruit) {
+        mFruit = fruit;
+    }
 
+    public void setNumberOfFruit(int numberOfFruit) {
+        mNumberOfFruit = numberOfFruit;
+    }
+
+    public void setNumberOfVegetables(int numberOfVegetables) {
+        mNumberOfVegetables = numberOfVegetables;
+    }
 
     //Error in save was just with file location!
     public static void save(Feb2 today)

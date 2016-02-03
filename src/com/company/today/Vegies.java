@@ -5,5 +5,6 @@ package com.company.today;
  */
 public enum Vegies {
 
+CUCUMBER, LETTUCE, CARROTS, SALAD
 
 }

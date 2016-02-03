@@ -2,6 +2,7 @@ package com.company;
 
 import com.company.today.Feb1;
 import com.company.today.Feb2;
+import com.company.today.Feb2_2;
 
 import java.io.BufferedReader;
 import java.io.Console;
@@ -9,9 +10,18 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Scanner;
 
-//TODO: make interface
-//TODO: make enum
 //TODO: LinkedList vs ArrayList
+//TODO:Maps
+//TODO:Lists
+//TODO:Sets
+//TODO:Queues
+//TODO:instanceof
+//TODO:comparable interface
+//TODO:generics
+//TODO: simpledateclass
+//TODO: bubble sort
+//TODO: interview questions both sites
+
 public class Main {
 
     public static void main(String[] args) {
@@ -109,6 +119,9 @@ public class Main {
 
     System.out.printf("%n%d characters and the lowercase copy is: %s%n", charCount, fullNameCopy);
 */
+
+/*       Feb2 tests
+
         //Feb1.save(today);
        int error = 57;
         Feb2 today = new Feb2("apples", 10, 20);
@@ -120,6 +133,21 @@ public class Main {
                     (today2.getNumberOfVegetables() == -1) ? today2.getNumberOfVegetables() : error );
         }
 
+        System.out.printf("%nthere are %d fruit", today2.getAmountOfFruit());
+
+*/
+
+        Feb2_2 today = new Feb2_2("oranges",57, 22);
+        today.save("FEb2_2.txt");
+        Feb2_2 yesterday = Feb2_2.read("FEb2_2.txt");
+        if(yesterday != null) {
+            System.out.printf("I have %d %s and %d vegetables",
+                    yesterday.getNumberOfFruit(),
+                    yesterday.getFruit(),
+                    yesterday.getNumberOfVegetables());
+            String[] now = yesterday.userInput();
+            System.out.printf("%n%s and %s are your answers%n", now[0], now[1]);
+        }
 
 }
 
